@@ -2,6 +2,6 @@
 SELECT(tv_genres.name) AS name,
 SUM(tv_show_ratings.rate) AS rating
 FROM tv_genres JOIN tv_show_ratings
-ON(tv_genres.id=tv_show_ratings.genre_id)
+ON(tv_genres.id=tv_show_ratings.show_id)
 GROUP BY name
 ORDER BY rating DESC
