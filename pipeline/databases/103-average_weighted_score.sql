@@ -1,7 +1,7 @@
 -- Creates a stored procedure ComputeAverageWeightedScoreForUser
 -- that computes and store the average weighted score for a student.
 DELIMITER //
-CREATE PROCEDURE ComputeAverageScoreForUser(IN p_user_id INT)
+CREATE PROCEDURE ComputeAverageWeightedScoreForUser(IN p_user_id INT)
 BEGIN
     DECLARE avg_weighted_score FLOAT;
     SELECT SUM(c.score * p.weight) / SUM(p.weight)
