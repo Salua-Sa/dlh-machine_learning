@@ -3,7 +3,7 @@
 DELIMITER //
 CREATE PROCEDURE ComputeAverageScoreForUser (IN student_id INT)
 BEGIN
-  DECLARE avg_score FLOAT;
+  DECLARE avg_score INT;
   SELECT AVG(score) INTO avg_score
   FROM corrections
   WHERE corrections.user_id = student_id;
