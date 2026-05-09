@@ -3,7 +3,7 @@
 DELIMITER //
 CREATE PROCEDURE ComputeAverageScoreForUser(IN p_user_id INT)
 BEGIN
-    DECLARE avg_weighted_score FLOAT
+    DECLARE avg_weighted_score FLOAT;
     SELECT SUM(c.score * p.weight) / SUM(p.weight)
     INTO avg_weighted_score
     FROM corrections c
@@ -14,4 +14,4 @@ BEGIN
     SET  average_score = avg_weighted_score
     WHERE id = p_user_id;
 END //
-DELIMITER;
+DELIMITER ;
