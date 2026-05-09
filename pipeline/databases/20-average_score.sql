@@ -8,7 +8,7 @@ BEGIN
   FROM corrections
   WHERE corrections.user_id = student_id;
   UPDATE users
-  SET average_score = avg_score
+  SET average_score = avg_score;
   WHERE id = student_id;
 END //
 DELIMITER ;
