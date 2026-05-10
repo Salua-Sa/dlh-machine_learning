@@ -16,5 +16,5 @@ def top_students(mongo_collection):
             average = 0
         else:
             average = total / count
-    students.sort(kex=lambda x: x["averageScore"], reverse=True)
+    students.sort(key=lambda x: x["averageScore"], reverse=True)
     return students
