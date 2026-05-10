@@ -32,7 +32,7 @@ if __name__ == "__main__":
         key=lambda x: x[1],
         reverse=True
     )
-    print(IPs:")
+    print("IPs:")
     for ip, count in sorted_ips[:10]:
         print("\t{}: {}".format(ip, count))
 
