@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """Module that caculates matrix shape."""
+
+
 def matrix_shape(matrix):
     """This function return the shape of a matrix"""
     shape_list = []
