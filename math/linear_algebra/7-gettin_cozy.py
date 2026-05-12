@@ -6,13 +6,19 @@ def cat_matrices2D(mat1, mat2, axis=0):
     """Returns the concaten´stes of two matrices"""
     new_matrix = []
     if axis == 0:
-        for row in mat1:
-            new_matrix.append(row[:])
-        for row in mat2:
-            new_matrix.append(row[:])
+        if len(mat1[0]) != len(mat2[0]):
+            return None
+        else:
+            for row in mat1:
+                new_matrix.append(row[:])
+            for row in mat2:
+                new_matrix.append(row[:])
     if axis == 1:
-        for i in range(len(mat1)):
+        if len(mat1) != len(mat2):
+            return None
+        else:
             new_row = []
-            new_row.append(mat1[i] + mat2[i])
+            for i in range(len(mat1)):
+                new_row.append(mat1[i] + mat2[i])
             new_matrix.append(new_row)
     return new_matrix
