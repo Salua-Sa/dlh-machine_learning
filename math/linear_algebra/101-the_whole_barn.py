@@ -8,7 +8,12 @@ def add_matrices(mat1, mat2):
         return mat1 + mat2
     if len(mat1) != len(mat2):
         return None
-    new_matrix = []
-    for i in range(len(mat1)):
-        new_matrix.append(add_matrices(mat1[i], mat2[i]))
+    else:
+        sum_total = 0
+        new_matrix = []
+        for i in range(len(mat1)):
+            sum_total = add_matrices(mat1[i], mat2[i])
+            if sum_total is None:
+                return None
+            new_matrix.append(sum_total)
     return new_matrix
