@@ -8,6 +8,9 @@ def cat_matrices(mat1, mat2, axis=0):
     shape2 = matrix_shape(mat2)
     if len(shape1) != len(shape2) or axis >= len(shape1):
         return None
+    for i in range(len(shape1)):
+        if i != axis and shape1[i] != shape2[i]:
+            return None
     new_matrix = []
     if axis == 0:
         for row in mat1:
