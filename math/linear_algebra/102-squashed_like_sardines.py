@@ -6,9 +6,7 @@ def cat_matrices(mat1, mat2, axis=0):
     """Returns the concatenate of two matrices along a specific axis"""
     shape1 = matrix_shape(mat1)
     shape2 = matrix_shape(mat2)
-    if len(shape1) != len(shape2):
-        return None
-    if isinstance(mat1[0], list) != isinstance(mat2[0], list):
+    if len(shape1) != len(shape2) or axis >= len(shape1):
         return None
     new_matrix = []
     if axis == 0:
@@ -24,6 +22,7 @@ def cat_matrices(mat1, mat2, axis=0):
                 return None
             new_matrix.append(result)
         return new_matrix
+
 
 def matrix_shape(matrix):
     """This function return the shape of a matrix"""
