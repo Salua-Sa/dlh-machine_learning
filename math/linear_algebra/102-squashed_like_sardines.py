@@ -12,4 +12,3 @@ def cat_matrices(mat1, mat2, axis=0):
         new_matrix = []
         for i in range(len(mat1)):
             new_matrix.append(cat_matrices(mat1[i], mat2[i], axis - 1))
-        return new_matrix
