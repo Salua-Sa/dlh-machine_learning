@@ -8,6 +8,8 @@ def cat_matrices(mat1, mat2, axis=0):
     shape2 = matrix_shape(mat2)
     if len(shape1) != len(shape2):
         return None
+    if isinstance(mat1[0], list) != isinstance(mat2[0], list):
+        return None
     new_matrix = []
     if axis == 0:
         for row in mat1:
@@ -22,7 +24,6 @@ def cat_matrices(mat1, mat2, axis=0):
                 return None
             new_matrix.append(result)
         return new_matrix
-
 
 def matrix_shape(matrix):
     """This function return the shape of a matrix"""
