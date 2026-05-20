@@ -2,9 +2,6 @@
 """Module calculates the determinant of a matrix"""
 
 
-import signal
-
-
 def determinant(matrix):
     """Returns the determinant of a matrix"""
     if matrix == []:
