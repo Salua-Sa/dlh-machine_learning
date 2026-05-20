@@ -1,4 +1,4 @@
 #!/usr/bin/env python3
 
 
-def determinant(matrix):
+def minor(matrix):
