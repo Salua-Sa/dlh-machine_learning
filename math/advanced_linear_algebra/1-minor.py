@@ -50,5 +50,5 @@ def determinant(matrix):
                     new_row.append(row[j])
             submatrix.append(new_row)
         sign = (-1) ** col
-        result = sign * matrix[0][col] * determinant(submatrix)
+        result += sign * matrix[0][col] * determinant(submatrix)
     return result
