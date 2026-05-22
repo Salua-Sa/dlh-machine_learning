@@ -21,7 +21,7 @@ def inverse(matrix):
     for i in range(len(adjugate_matrix)):
         inverse_row = []
         for j in range(len(adjugate_matrix[0])):
-            result = (1/det) * adjugate_matrix[i][j]
+            result = adjugate_matrix[i][j] / det
             inverse_row.append(result)
         inverse_matrix.append(inverse_row)
     return inverse_matrix
