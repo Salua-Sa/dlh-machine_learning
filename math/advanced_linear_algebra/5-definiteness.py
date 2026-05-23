@@ -12,6 +12,10 @@ def definiteness(matrix):
         return None
     if shape_matrix[0] != shape_matrix[1]:
         return None
+    for i in range(matrix):
+        for j in range(matrix):
+            if matrix[i][j] != matrix[j][i]:
+                return None
     result = ""
     d1 = determinant(matrix[:1, :1])
     d2 = determinant(matrix[:2, :2])
@@ -21,7 +25,6 @@ def definiteness(matrix):
             result = "Positive semi-definite"
         else:
             result = "Positive definite"
-
     elif d1 <= 0 and d2 >= 0:
         if d1 == 0 or d2 == 0 or d3 == 0:
             result = "Negative semi-definite"
