@@ -9,15 +9,14 @@ def poly_integral(poly, C=0):
     new_list = []
     new_list.append(C)
     for i in range(len(poly)):
-        print(poly[i])
         if poly[i] == 0:
             new_list.append(0)
-        elif i == 0:
-            new_list.append(poly[i])
         else:
             result = (poly[i] / (i + 1))
             if result.is_integer():
                 new_list.append(int(result))
             else:
                 new_list.append(result)
+    while len(new_list) > 1 and new_list[-1] == 0:
+        new_list.pop()
     return new_list
