@@ -11,4 +11,3 @@ def line():
     plt.plot(y, "r-")
     plt.xlim(0, 10)
     plt.show()
-
