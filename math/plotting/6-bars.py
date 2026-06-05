@@ -11,13 +11,10 @@ def bars():
     plt.figure(figsize=(6.4, 4.8))
     people = ["Farrah", "Fred", "Felicia"]
     x = np.arange(len(people))
-    plt.bar(x, fruit[0], wigth=0.5, color="red", label="apples")
-    plt.bar(x, fruit[1], wigth=0.5, bottom=fruit[0],
-            color="yellow", label="bananas")
-    plt.bar(x, fruit[2], wigth=0.5, bottom=fruit[0] + fruits[1],
-            color="#ff8000", label="oranges")
-    plt.bar(x, fruit[3], wigth=0.5, bottom=fruit[0] + fruits[1] + fruits[2],
-            color="#ffe5b4", label="peaches")
+    plt.bar(x, fruit[0], width=0.5, color="red", label="apples")
+    plt.bar(x, fruit[1], width=0.5, bottom=fruit[0], color="yellow", label="bananas")
+    plt.bar(x, fruit[2], width=0.5, bottom=fruit[0] + fruits[1], color="#ff8000", label="oranges")
+    plt.bar(x, fruit[3], width=0.5, bottom=fruit[0] + fruits[1] + fruits[2], color="#ffe5b4", label="peaches")
     plt.xticks(x, people)
     plt.ylabel("Quantity of Fruit")
     plt.ylim(0, 80)
