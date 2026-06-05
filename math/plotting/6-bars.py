@@ -9,7 +9,7 @@ def bars():
     np.random.seed(5)
     fruit = np.random.randint(0, 20, (4, 3))
     plt.figure(figsize=(6.4, 4.8))
-    people = [Farrah, Fred, Felicia]
+    people = ["Farrah", "Fred", "Felicia"]
     x = np.arange(len(people))
     plt.bar(x, fruit[0], wigth=0.5, color="red", label="apples")
     plt.bar(x, fruit[1], wigth=0.5, bottom=fruit[0],
