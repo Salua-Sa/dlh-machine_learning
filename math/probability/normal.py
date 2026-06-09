@@ -8,7 +8,7 @@ class Normal:
         self.data = data
         self.mean = float(mean)
         self.stddev = float(stddev)
-        if stddev < 0:
+        if stddev <= 0:
             raise ValueError("stddev must be a positive value")
         if data is not None:
             if not isinstance(data, list):
