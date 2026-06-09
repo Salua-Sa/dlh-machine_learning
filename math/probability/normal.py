@@ -40,3 +40,14 @@ class Normal:
         e = 2.7182818285
         z = self.z_score(x)
         return (1 / (self.stddev * (2 * pi) ** 0.5)) * e ** (-0.5 * z ** 2)
+
+    def cdf(self, x):
+        """Returns the value of the CDF for a given x-value"""
+        pi = 3.1415926536
+        z = (x - self.mean) / (self.stddev * (2 ** 0.5))
+        erf_part = (z - (z ** 3) / 3
+                    + (z ** 5) / 10
+                    - (z ** 7) / 42
+                    + (z ** 9) / 216)
+        erf = (2 / (pi ** 0.5)) * erf_part
+        return (1 + erf) / 2
