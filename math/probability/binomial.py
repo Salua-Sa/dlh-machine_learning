@@ -2,6 +2,9 @@
 """Module that creates a class Binomial"""
 
 
+from pdb import pm
+
+
 class Binomial:
     """This class represents a binomial distribution"""
     def __init__(self, data=None, n=1, p=0.5):
@@ -47,3 +50,14 @@ class Binomial:
             n_minus_k_factorial *= i
         possible_orders = n_factorial / (k_factorial * n_minus_k_factorial)
         return possible_orders * (self.p ** k) * ((1 - self.p) ** (self.n - k))
+
+    def cdf(self, k):
+        """Returns the value of the CDF for a given number of successes"""
+        if not isinstance(k, int):
+            k = int(k)
+        if k < 0:
+            return 0
+        cdf = 0
+        for i in range(k + 1):
+            cdf += self.pmf(i)
+        return cdf
