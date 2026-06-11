@@ -2,9 +2,6 @@
 """Module that creates a class Binomial"""
 
 
-from pdb import pm
-
-
 class Binomial:
     """This class represents a binomial distribution"""
     def __init__(self, data=None, n=1, p=0.5):
