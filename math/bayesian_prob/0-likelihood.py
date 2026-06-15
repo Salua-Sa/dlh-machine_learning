@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+"""Module that  that calculates the likelihood"""
+import numpy as np
+
+def likelihood(x, n, P):
+    if not isinstance(n, int) or n <= 0:
+        raise ValueError("n must be a positive integer")
+    if not isinstance(x, int) or x < 0:
+        raise ValueError("x must be an integer that is greater than or equal to 0")
+    if x > n:
+        raise ValueError("x cannot be greater than n")
+    if not isinstance(P, np.ndarray) or len(P.shape) != 1:
+        raise TypeError("P must be a 1D numpy.ndarray")
+    for i in P:
+        if i < 0 or i > 1:
+            raise ValueError("All values in P must be in the range [0, 1]")
+    factorial_x = 1
+    factorial_n = 1
+    factorial_n_minos_s = 1
+    n_minus_x = n - x
+    x_original = x
+    n_original = n
+    while x > 0:
+        factorial_x *= x
+        x -= 1
+    while n > 0:
+        factorial_n *= n
+        n -= 1
+    while n_minus_x > 0:
+        factorial_n_minos_s *= n_minus_x
+        n_minus_x -= 1
+    comb = factorial_n / (factorial_x * factorial_n_minos_s) 
+    new_array = []
+    for i in P:
+        new_array.append(comb * (i ** x_original) * ((1 - i) ** (n_original - x_original)))
+    return np.array(new_array)
