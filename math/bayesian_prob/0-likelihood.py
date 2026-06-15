@@ -2,11 +2,15 @@
 """Module that  that calculates the likelihood"""
 import numpy as np
 
+
 def likelihood(x, n, P):
+    # Reaturn  the likelihood of obtaining this data given various
+    # hypothetical probabilities of developing severe side effects
     if not isinstance(n, int) or n <= 0:
         raise ValueError("n must be a positive integer")
     if not isinstance(x, int) or x < 0:
-        raise ValueError("x must be an integer that is greater than or equal to 0")
+        raise ValueError("x must be an integer that is" +
+                         "greater than or equal to 0")
     if x > n:
         raise ValueError("x cannot be greater than n")
     if not isinstance(P, np.ndarray) or len(P.shape) != 1:
@@ -29,8 +33,17 @@ def likelihood(x, n, P):
     while n_minus_x > 0:
         factorial_n_minos_s *= n_minus_x
         n_minus_x -= 1
-    comb = factorial_n / (factorial_x * factorial_n_minos_s) 
+    comb = factorial_n / (factorial_x * factorial_n_minos_s)
     new_array = []
     for i in P:
-        new_array.append(comb * (i ** x_original) * ((1 - i) ** (n_original - x_original)))
+        new_array.append(comb
+                         * (i ** x_original)
+                         * ((1 - i) ** (n_original - x_original)))
     return np.array(new_array)
+
+if __name__ == '__main__':
+    import numpy as np
+    likelihood = __import__('0-likelihood').likelihood
+
+    P = np.linspace(0, 1, 11) # [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+    print(likelihood(26, 130, P))
