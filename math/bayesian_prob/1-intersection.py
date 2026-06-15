@@ -20,6 +20,9 @@ def intersection(x, n, P, Pr):
     for i in P:
         if i < 0 or i > 1:
             raise ValueError("All values in P must be in the range [0, 1]")
+    for i in Pr:
+        if i < 0 or i > 1:
+            raise ValueError("All values in Pr must be in the range [0, 1]")
     if not np.isclose(np.sum(Pr), 1):
         raise ValueError("Pr must sum to 1")
     factorial_x = 1
