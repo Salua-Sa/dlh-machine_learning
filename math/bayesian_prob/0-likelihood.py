@@ -4,12 +4,12 @@ import numpy as np
 
 
 def likelihood(x, n, P):
-    # Reaturn  the likelihood of obtaining this data given various
-    # hypothetical probabilities of developing severe side effects
+    """Reaturn  the likelihood of obtaining this data given various"""
+    """hypothetical probabilities of developing severe side effects"""
     if not isinstance(n, int) or n <= 0:
         raise ValueError("n must be a positive integer")
     if not isinstance(x, int) or x < 0:
-        raise ValueError("x must be an integer that is" +
+        raise ValueError("x must be an integer that is " +
                          "greater than or equal to 0")
     if x > n:
         raise ValueError("x cannot be greater than n")
