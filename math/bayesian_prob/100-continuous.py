@@ -21,5 +21,5 @@ def posterior(x, n, p1, p2):
     if p2 <= p1:
         raise ValueError("p2 must be greater than p1")
     posterior = special.betainc(x + 1, n - x + 1, p2)
-    - special.betainc(x + 1, n - x + 1, p1)
+                - special.betainc(x + 1, n - x + 1, p1)
     return posterior
