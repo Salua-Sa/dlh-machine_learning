@@ -20,6 +20,8 @@ def posterior(x, n, p1, p2):
         raise ValueError("p2 must be a float in the range [0, 1]")
     if p2 <= p1:
         raise ValueError("p2 must be greater than p1")
-    posterior = special.betainc(x + 1, n - x + 1, p2)
-                - special.betainc(x + 1, n - x + 1, p1)
+    alpha = x + 1
+    beta = n - x + 1
+    posterior = special.betainc(alpha, beta, p2) - special.betainc(
+        alpha, beta, p1)
     return posterior
