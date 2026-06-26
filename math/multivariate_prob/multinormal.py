@@ -31,7 +31,7 @@ class MultiNormal:
         diff = x - self.mean
         inverse_cov = np.linalg.inv(self.cov)
         determinant_cov = np.linalg.det(self.cov)
-        exponent = -0.5 * diff.T @ inverse_cov @ diff
-        pdf_result = np.exp(exponent) / np.sqrt(((
-            2 * np.pi) ** d) * determinant_cov)
-        return np.nextafter(pdf_result[0][0], 0)
+        coefficient = 1.0 / np.sqrt(((2 * np.pi) ** d) * determinant_cov)
+        exponent = np.exp(-0.5 * np.dot(np.dot(diff.T, inverse_cov),
+                                        diff).item())
+        return coefficient * exponent
