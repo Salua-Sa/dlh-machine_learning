@@ -32,6 +32,6 @@ class MultiNormal:
         inverse_cov = np.linalg.inv(self.cov)
         determinant_cov = np.linalg.det(self.cov)
         exponent = -0.5 * diff.T @ inverse_cov @ diff
-        denominator = np.sqrt(((2 * np.pi) ** d) * determinant_cov)
-        result_pdf = np.exp(exponent) / denominator
-        return result_pdf[0][0]
+        pdf_result = np.exp(exponent) / np.sqrt(((
+            2 * np.pi) ** d) * determinant_cov)
+        return pdf_result[0][0]
