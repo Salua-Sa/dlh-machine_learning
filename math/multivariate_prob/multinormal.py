@@ -29,9 +29,12 @@ class MultiNormal:
         if x.shape[0] != d or x.shape[1] != 1:
             raise ValueError(f"x must have the shape ({d}, 1)")
         diff = x - self.mean
-        inverse_cov = np.linalg.inv(self.cov)
-        determinant_cov = np.linalg.det(self.cov)
-        coefficient = 1.0 / np.sqrt(((2 * np.pi) ** d) * determinant_cov)
-        exponent = np.exp(-0.5 * np.dot(np.dot(diff.T, inverse_cov),
-                                        diff).item())
-        return coefficient * exponent
+        coefficient = 1.0 / (
+            np.sqrt((2 * np.pi) ** d * np.linalg.det(self.cov))
+        )
+        exp = (
+            np.exp(-0.5 * np.dot(
+                np.dot(diff.T, np.linalg.inv(
+                    self.cov)), diff).item()
+                   ))
+        return coefficient * exp
