@@ -34,4 +34,4 @@ class MultiNormal:
         exponent = -0.5 * diff.T @ inverse_cov @ diff
         pdf_result = np.exp(exponent) / np.sqrt(((
             2 * np.pi) ** d) * determinant_cov)
-        return pdf_result[0][0]
+        return np.nextafter(pdf_result[0][0], 0)
