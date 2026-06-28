@@ -7,8 +7,6 @@ This project introduces derivatives and integrals, which are important for under
 | Concept | What it means | Why it matters |
 |---|---|---|
 | Summation notation | A compact way to write repeated addition | Used in formulas for loss functions and averages |
-| Product notation | A compact way to write repeated multiplication | Used in probability and mathematical formulas |
-| Series | A sum of many terms following a pattern | Helps approximate functions |
 | Derivative | Measures rate of change | Shows how fast something changes |
 | Product rule | Rule for differentiating products of functions | Used when functions are multiplied |
 | Chain rule | Rule for differentiating nested functions | Very important in neural networks and backpropagation |
