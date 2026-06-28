@@ -16,7 +16,9 @@ This project explains how to update probabilities when new evidence becomes avai
 
 ```text
 P(A | B) = P(B | A) * P(A) / P(B)
-Why This Project Matters
+---
+
+## Why This Project Matters
 Bayesian probability is useful when decisions must be updated based on new information.
 Skills Practiced
 Identifying prior probability
@@ -25,7 +27,6 @@ Computing marginal probability
 Computing posterior probability
 Applying Bayes' theorem
 Interpreting results in real-world scenarios
-Real-Life Use
-Bayes' theorem is used in medical testing, spam detection, fraud detection, search engines, recommendation systems, and risk analysis.
 
----
+## Real-Life Use
+Bayes' theorem is used in medical testing, spam detection, fraud detection, search engines, recommendation systems, and risk analysis.
