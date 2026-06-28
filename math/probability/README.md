@@ -24,6 +24,7 @@ This project covers probability rules, descriptive statistics, and common probab
 | Poisson | Number of events in time or space |
 | Exponential | Waiting time until next event |
 | Normal | Bell-shaped continuous data |
+| Binomial | Number of successes in fixed trials |
 
 ## Why This Project Matters
 
