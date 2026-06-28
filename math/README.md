@@ -50,10 +50,10 @@ Linear algebra helps represent data, calculus helps optimize models, probability
 - Computing determinants and inverses
 - Understanding eigenvalues and eigenvectors
 - Calculating derivatives and integrals
+- Visualizing data with Matplotlib
 - Applying probability rules
 - Understanding common distributions
 - Using Bayes’ theorem
-- Visualizing data with Matplotlib
 
 ## Tools Used
 
