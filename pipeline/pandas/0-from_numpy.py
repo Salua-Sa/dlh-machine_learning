@@ -8,7 +8,7 @@ def from_numpy(array):
     letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     number_of_columns = array.shape[1]
     if number_of_columns > 26:
-        columns = list(letters[:number_of_columns])
+        columns = list(letters[:26])
     else:
         columns = list(letters[:number_of_columns])
     df = pd.DataFrame(array, columns=columns)
