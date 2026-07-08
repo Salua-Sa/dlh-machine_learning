@@ -4,5 +4,5 @@
 
 def prune(df):
     """Returns a DataFrame after removing any entries"""
-    df = df.dropna(how="any")
+    df = df.dropna(subset=["Close"])
     return df
