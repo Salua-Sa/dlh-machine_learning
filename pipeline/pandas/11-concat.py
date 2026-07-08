@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""This module sets the index of a pandas DataFrame"""
+"""This module concatenates two indexed pandas DataFrame"""
 import pandas as pd
 index = __import__('10-index').index
 
