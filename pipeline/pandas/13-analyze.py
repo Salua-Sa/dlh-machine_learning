@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""This module concatenates two pandas DataFrame using a hierarchical index"""
-import pandas as pd
+"""This module computes descriptive statistics for a pandas DataFrame"""
 
 
 def analyze(df):
-    """Returns a new pd.DataFrame containing these statistics"""
+    """Return a descriptive statistics for all columns """
+    """except the Timestamp column"""
     df = df.drop(columns='Timestamp')
     df = df.describe()
     return df
