@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""This modeule  creates a method that returns 
+"""This modeule  creates a method that returns
 the list of ships that can hold a given number of passengers.
 """
 import requests
