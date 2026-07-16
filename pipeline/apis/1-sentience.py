@@ -23,11 +23,10 @@ def sentientPlanets():
         species_list = data["results"]
 
         for species in species_list:
-            classification = species["classification"]
-            designation = species["designation"]
+            classification = (species["classification"]).lower()
+            designation = (species["designation"]).lower()
 
-            if ("sentient" in classification.lower()
-                or "sentient" in designation.lower()):
+            if (classification == "sentient" or designation == "sentient"):
                 homeworld_url = species["homeworld"]
 
                 if homeworld_url:
