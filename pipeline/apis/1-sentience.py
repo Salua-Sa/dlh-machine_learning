@@ -1,12 +1,15 @@
 #!/usr/bin/env python3
-"""This module creates a method that returns the list of
+"""
+This module creates a method that returns the list of
 names of the home planets of all sentient species.
 """
 import requests
 
 
 def sentientPlanets():
-    """Returns the list of names of the home planets of all sentient species
+    """
+    Returns the list of names of the home
+    planets of all sentient species.
     """
     planets = []
     url = "https://swapi-api.hbtn.io/api/species/"
@@ -23,8 +26,8 @@ def sentientPlanets():
             classification = species["classification"]
             designation = species["designation"]
 
-            if "sentient" in classification.lower() or
-            "sentient" in designation.lower():
+            if ("sentient" in classification.lower()
+                or "sentient" in designation.lower()):
                 homeworld_url = species["homeworld"]
 
                 if homeworld_url:
