@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""
+"""This modeule  creates a method that returns 
+the list of ships that can hold a given number of passengers.
 """
 import requests
 
 
 def availableShips(passengerCount):
-    """
+    """Returns the list of ships that can hold a given number of passengers.
     """
     available_ships = []
     url = "https://swapi-api.hbtn.io/api/starships/"
